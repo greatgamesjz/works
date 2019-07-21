@@ -18,11 +18,15 @@ namespace _4._Existing_powers_of_2
                 }
                 else Console.WriteLine("NaN");
             }
-            decomposedNums.Sort();
-            foreach(uint number in decomposedNums)
+            if (decomposedNums.Count > 0)
             {
-                Console.Write(number+" ");
+                decomposedNums.Sort();
+                foreach (uint number in decomposedNums)
+                {
+                    Console.Write(number + " ");
+                }
             }
+            else Console.WriteLine("NA");
         }
         private static void decomposeNum(uint num,ArrayList decomposedNums)
         {
