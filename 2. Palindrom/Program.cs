@@ -7,9 +7,9 @@ namespace Palindrom
     {
         static void Main(string[] args)
         {
-            Regex rx = new Regex("[^a-zA-Z]");
+            Regex filtr = new Regex("[^a-zA-Z]");
             string word = Console.ReadLine();
-            word = rx.Replace(word, "");
+            word = filtr.Replace(word, "");
             bool success = true;
             for (int i = 0; i < word.Length; i++)
             {
