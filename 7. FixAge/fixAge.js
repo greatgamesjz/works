@@ -1,7 +1,3 @@
-fixage(2,5,1);
-
-
-
 function fixage(...args)
 {
 	for(var i=0;i<args.length;i++)
