@@ -13,7 +13,7 @@ function fixage(...args)
 		}
 	}
 	if(args.length>0)
-		console.log(args.join(","));
+		return args.join(",");
 	else
-		console.log("NA");
-}
+		return "NA";
+}x
