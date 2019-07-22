@@ -1,5 +1,5 @@
-//createForm(); //uncomment automatically create form
-//addListeners(); //uncomment automatically add listeners
+//createForm(); //uncomment to automatically create form
+//addListeners(); //uncomment to automatically add listeners
 function createForm()
 {
 	var input1 = document.createElement("input");
