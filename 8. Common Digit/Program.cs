@@ -7,23 +7,42 @@ namespace _8._Common_Digit
         static void Main(string[] args)
         {
             int n;
-            int maxIndex = 0, maxValue = 0;
-            int[] digitSum = new int[10];
-            for (int i = 0; i < 10; i++)
-                digitSum[i]=0;
             if (Int32.TryParse(Console.ReadLine(), out n));
-                string digits = Console.ReadLine();
-            for (int i = 0; i < digits.Length; i++)
-                if (digits[i] >= '0' && digits[i] <= '9')
-                    digitSum[digits[i] - '0']++;
-            for(int i=9;i>=0;i--)
-                if(digitSum[i]>maxValue)
+            {
+                int maxSum = -1, maxIndex = -1,s;
+                string input = Console.ReadLine();
+                string[] token = input.Split(' ');
+                int[] numbers = Array.ConvertAll(token, int.Parse);
+                for (int i=0;i<n;i++)
                 {
-                    maxIndex = i;
-                    maxValue = digitSum[i];
+                    s = sum(numbers[i]);
+                    if (s>maxSum)
+                    {
+                        maxSum = s;
+                        maxIndex = i;
+                    }
+                    else if(s==maxSum)
+                    {
+                        if(numbers[i]>numbers[maxIndex])
+                        {
+                            maxSum = s;
+                            maxIndex = i;
+                        }
+                    }
                 }
-            Console.WriteLine(maxIndex);
+                Console.WriteLine(maxIndex);
+            }
 
+        }
+        static int sum(int num)
+        {
+            int w = 0;
+            do
+            {
+                w += num % 10;
+                num /= 10;
+            } while (num > 0);
+            return w;
         }
     }
 }
